@@ -1,0 +1,17 @@
+{
+  "name": "@loom/payload-admin",
+  "version": "1.0.0",
+  "description": "LOOM Studios – shared Payload CMS admin shell. Install via: npm install github:loomstudiosio/web-panel",
+  "private": false,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./config": "./src/config.ts",
+    "./styles": "./src/custom.scss"
+  },
+  "peerDependencies": {
+    "next": "*",
+    "payload": "^3.0.0",
+    "react": "*"
+  }
+}

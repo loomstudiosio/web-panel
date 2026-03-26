@@ -1,0 +1,347 @@
+@import "tailwindcss/theme";
+@import "tailwindcss/utilities";
+
+/* Add Payload admin custom styles here when needed. */
+
+:root {
+  --admin-brand-1: #0a7a70;
+  --admin-brand-2: #ff6a3c;
+  --admin-surface-1: color-mix(in srgb, var(--theme-bg) 86%, #ffffff);
+  --admin-surface-2: color-mix(in srgb, var(--theme-elevation-50) 70%, #ffffff);
+}
+
+.collections__label {
+  padding-top: 2rem;
+}
+
+.collection-list__wrap .list-header {
+  padding-top: 2rem;
+}
+
+/* Sidebar: align "Collections" group label with body headline */
+.nav-group__label {
+  padding-top: 3.2rem;
+}
+
+/* Sidebar: increase spacing between nav items */
+.nav__link {
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+}
+
+.admin-layout-banner {
+  margin-bottom: 1.6rem;
+  padding: 1.2rem 1.4rem;
+  border-radius: 14px;
+  border: 1px solid color-mix(in srgb, var(--theme-elevation-150) 70%, transparent);
+  background:
+    radial-gradient(circle at 100% 0%, color-mix(in srgb, var(--theme-success-500) 14%, transparent), transparent 45%),
+    linear-gradient(145deg, color-mix(in srgb, var(--theme-bg) 90%, var(--theme-elevation-50)), var(--theme-bg));
+}
+
+.admin-layout-banner__content {
+  max-width: 66ch;
+}
+
+.admin-layout-banner__eyebrow {
+  margin: 0;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--theme-elevation-500);
+}
+
+.admin-layout-banner__title {
+  margin: 0.2rem 0 0;
+  font-size: clamp(1.1rem, 1.2vw + 0.8rem, 1.55rem);
+}
+
+.admin-layout-banner__copy {
+  margin: 0.5rem 0 0;
+  color: var(--theme-elevation-700);
+}
+
+.admin-layout-banner__actions {
+  display: flex;
+  gap: 0.7rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.admin-layout-banner__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 0.45rem 0.9rem;
+  border: 1px solid transparent;
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--theme-bg);
+  background: var(--theme-text);
+}
+
+.admin-layout-banner__button:hover {
+  opacity: 0.9;
+}
+
+.admin-layout-banner__button--ghost {
+  color: var(--theme-text);
+  background: transparent;
+  border-color: var(--theme-elevation-200);
+}
+
+.admin-nav-panel {
+  margin: 0 0 1rem;
+  padding: 0.8rem;
+  border-radius: 12px;
+  border: 1px solid color-mix(in srgb, var(--admin-brand-1) 18%, var(--theme-elevation-150));
+  background:
+    linear-gradient(130deg, color-mix(in srgb, var(--admin-brand-1) 8%, transparent), transparent 42%),
+    var(--admin-surface-2);
+}
+
+.admin-nav-panel__label {
+  margin: 0 0 0.4rem;
+  text-transform: uppercase;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  color: var(--theme-elevation-500);
+}
+
+.admin-nav-panel__links {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.admin-nav-panel__link {
+  text-decoration: none;
+  color: var(--theme-text);
+  font-weight: 600;
+}
+
+.admin-nav-panel__link:hover {
+  text-decoration: underline;
+}
+
+:is(
+    .collection-list--projects,
+    .collection-list--media,
+    .collection-list--users,
+    .collection-edit--projects,
+    .collection-edit--media,
+    .collection-edit--users
+  ) {
+  --admin-page-max-width: 1060px;
+  --admin-page-border: color-mix(in srgb, var(--admin-brand-1) 18%, var(--theme-elevation-200));
+  --admin-page-border-strong: color-mix(in srgb, var(--admin-brand-1) 24%, var(--theme-elevation-200));
+  --admin-page-glow: radial-gradient(
+    circle at 100% 0,
+    color-mix(in srgb, var(--admin-brand-2) 18%, transparent),
+    transparent 46%
+  );
+  --admin-page-glow-secondary: radial-gradient(
+    circle at 0 100%,
+    color-mix(in srgb, var(--admin-brand-1) 14%, transparent),
+    transparent 42%
+  );
+}
+
+:is(.collection-list--projects, .collection-list--media, .collection-list--users) {
+  max-width: var(--admin-page-max-width);
+  margin: 0 auto;
+}
+
+:is(.collection-list--projects, .collection-list--media, .collection-list--users) .collection-list__wrap {
+  display: grid;
+  gap: 1rem;
+}
+
+:is(.collection-list--projects, .collection-list--media, .collection-list--users) .list-header {
+  padding: 1.3rem 1.4rem;
+  border-radius: 16px;
+  border: 1px solid var(--admin-page-border-strong);
+  background:
+    var(--admin-page-glow),
+    var(--admin-page-glow-secondary),
+    var(--admin-surface-1);
+}
+
+:is(.collection-list--projects, .collection-list--media, .collection-list--users) .list-header__title {
+  margin: 0;
+  font-size: clamp(1.35rem, 1.5vw + 0.95rem, 1.95rem);
+  line-height: 1.1;
+}
+
+:is(.collection-list--projects, .collection-list--media, .collection-list--users) .list-controls,
+:is(.collection-list--projects, .collection-list--media, .collection-list--users) .table-wrap,
+:is(.collection-list--projects, .collection-list--media, .collection-list--users) .no-results {
+  border-radius: 14px;
+  border: 1px solid var(--admin-page-border);
+  background: var(--admin-surface-2);
+}
+
+:is(.collection-list--projects, .collection-list--media, .collection-list--users) .list-controls,
+:is(.collection-list--projects, .collection-list--media, .collection-list--users) .no-results {
+  padding: 1rem;
+}
+
+:is(.collection-list--projects, .collection-list--media, .collection-list--users) .table-wrap {
+  padding: 0.35rem;
+  overflow: hidden;
+}
+
+:is(.collection-list--projects, .collection-list--media, .collection-list--users) .table {
+  margin-bottom: 0;
+}
+
+:is(.collection-list--projects, .collection-list--media, .collection-list--users) .table thead {
+  color: var(--theme-elevation-700);
+}
+
+:is(.collection-list--projects, .collection-list--media, .collection-list--users) .table thead th {
+  font-weight: 600;
+  background: color-mix(in srgb, var(--theme-bg) 72%, transparent);
+}
+
+:is(.collection-list--projects, .collection-list--media, .collection-list--users) .table tbody tr:nth-child(odd) {
+  background: color-mix(in srgb, var(--theme-bg) 68%, transparent);
+}
+
+:is(.collection-list--projects, .collection-list--media, .collection-list--users) .table tbody tr:nth-child(even) {
+  background: transparent;
+}
+
+:is(.collection-list--projects, .collection-list--media, .collection-list--users) .table a,
+:is(.collection-list--projects, .collection-list--media, .collection-list--users) .no-results a {
+  color: var(--admin-brand-1);
+  font-weight: 600;
+}
+
+:is(.collection-list--projects, .collection-list--media, .collection-list--users) .btn--style-primary,
+:is(.collection-edit--projects, .collection-edit--media, .collection-edit--users) .btn--style-primary {
+  --bg-color: linear-gradient(
+    120deg,
+    var(--admin-brand-1),
+    color-mix(in srgb, var(--admin-brand-2) 82%, #ff8c61)
+  );
+  --hover-bg: linear-gradient(
+    120deg,
+    color-mix(in srgb, var(--admin-brand-1) 88%, #ffffff),
+    color-mix(in srgb, var(--admin-brand-2) 88%, #ff8c61)
+  );
+  --color: #ffffff;
+  --hover-color: #ffffff;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+:is(.collection-list--projects, .collection-list--media, .collection-list--users) .btn--style-secondary,
+:is(.collection-list--projects, .collection-list--media, .collection-list--users) .btn--style-pill,
+:is(.collection-edit--projects, .collection-edit--media, .collection-edit--users) .btn--style-secondary,
+:is(.collection-edit--projects, .collection-edit--media, .collection-edit--users) .btn--style-pill,
+:is(.collection-edit--projects, .collection-edit--media, .collection-edit--users) .btn--style-subtle {
+  border-radius: 999px;
+}
+
+:is(.collection-edit--projects, .collection-edit--media, .collection-edit--users) {
+  max-width: var(--admin-page-max-width);
+  margin: 0 auto;
+}
+
+:is(.collection-edit--projects, .collection-edit--media, .collection-edit--users) .doc-controls {
+  top: 0.75rem;
+  margin-bottom: 1rem;
+  border-radius: 16px;
+  border: 1px solid var(--admin-page-border);
+  background:
+    radial-gradient(circle at 100% 0, color-mix(in srgb, var(--admin-brand-2) 14%, transparent), transparent 48%),
+    var(--admin-surface-1);
+  box-shadow: 0 14px 32px color-mix(in srgb, var(--theme-text) 8%, transparent);
+}
+
+:is(.collection-edit--projects, .collection-edit--media, .collection-edit--users) .doc-controls__divider {
+  display: none;
+}
+
+:is(.collection-edit--projects, .collection-edit--media, .collection-edit--users) .doc-controls__wrapper {
+  padding-inline: 1rem;
+}
+
+:is(.collection-edit--projects, .collection-edit--media, .collection-edit--users) .doc-controls__label {
+  color: var(--theme-elevation-700);
+}
+
+:is(.collection-edit--projects, .collection-edit--media, .collection-edit--users) .document-fields {
+  gap: 1rem;
+}
+
+:is(.collection-edit--projects, .collection-edit--media, .collection-edit--users) .document-fields__edit,
+:is(.collection-edit--projects, .collection-edit--media, .collection-edit--users) .document-fields__sidebar-fields {
+  padding-top: 0;
+}
+
+:is(.collection-edit--projects, .collection-edit--media, .collection-edit--users) .document-fields__edit > .render-fields,
+:is(.collection-edit--projects, .collection-edit--media, .collection-edit--users) .document-fields__sidebar-fields > .render-fields {
+  display: grid;
+  gap: 1rem;
+}
+
+:is(.collection-edit--projects, .collection-edit--media, .collection-edit--users) .document-fields__edit > .render-fields > .field-type,
+:is(.collection-edit--projects, .collection-edit--media, .collection-edit--users) .document-fields__sidebar-fields > .render-fields > .field-type,
+:is(.collection-edit--projects, .collection-edit--media, .collection-edit--users) .collection-edit__auth {
+  margin: 0;
+  padding: 1rem;
+  border-radius: 14px;
+  border: 1px solid var(--admin-page-border);
+  background: var(--admin-surface-2);
+}
+
+:is(.collection-edit--projects, .collection-edit--media, .collection-edit--users) .document-fields__sidebar-wrap {
+  padding-left: 1rem;
+}
+
+:is(.collection-edit--projects, .collection-edit--media, .collection-edit--users) .document-fields__sidebar {
+  border-radius: 14px;
+  border: 1px solid var(--admin-page-border);
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--admin-brand-1) 6%, transparent), transparent 28%),
+    var(--admin-surface-2);
+}
+
+:is(.collection-edit--projects, .collection-edit--media, .collection-edit--users) .document-fields__label {
+  color: var(--theme-elevation-700);
+}
+
+:is(.collection-edit--projects, .collection-edit--media, .collection-edit--users) .render-fields > .field-type.group-field,
+:is(.collection-edit--projects, .collection-edit--media, .collection-edit--users) .render-fields > .field-type.array-field,
+:is(.collection-edit--projects, .collection-edit--media, .collection-edit--users) .render-fields > .field-type.blocks-field,
+:is(.collection-edit--projects, .collection-edit--media, .collection-edit--users) .render-fields > .field-type.collapsible-field,
+:is(.collection-edit--projects, .collection-edit--media, .collection-edit--users) .render-fields > .field-type.rich-text {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+@media (max-width: 700px) {
+  :is(.collection-list--projects, .collection-list--media, .collection-list--users) .list-header,
+  :is(.collection-list--projects, .collection-list--media, .collection-list--users) .list-controls,
+  :is(.collection-list--projects, .collection-list--media, .collection-list--users) .no-results,
+  :is(.collection-edit--projects, .collection-edit--media, .collection-edit--users) .document-fields__edit > .render-fields > .field-type,
+  :is(.collection-edit--projects, .collection-edit--media, .collection-edit--users) .document-fields__sidebar-fields > .render-fields > .field-type,
+  :is(.collection-edit--projects, .collection-edit--media, .collection-edit--users) .collection-edit__auth {
+    padding: 0.85rem;
+  }
+
+  :is(.collection-edit--projects, .collection-edit--media, .collection-edit--users) .doc-controls {
+    top: 0;
+    border-radius: 14px;
+  }
+
+  :is(.collection-edit--projects, .collection-edit--media, .collection-edit--users) .doc-controls__wrapper {
+    padding-inline: 0;
+  }
+
+  :is(.collection-edit--projects, .collection-edit--media, .collection-edit--users) .document-fields__sidebar-wrap {
+    padding-left: 0;
+  }
+}
