@@ -1,22 +1,29 @@
+type AdminComponents = {
+  beforeNavLinks?: string[]
+  views?: { dashboard?: { Component?: string } }
+  graphics?: { Icon?: string; Logo?: string }
+}
+
 /**
  * Returns the admin.components config block for payload.config.ts.
  *
- * Usage in each client's payload.config.ts:
- *   import { getAdminComponents } from '@loom/payload-admin/config'
- *   // ...
- *   admin: { components: getAdminComponents() }
+ * Pass overrides to replace individual components with local ones:
+ *   getAdminComponents({ graphics: { Logo: './src/components/MyLogo#MyLogo' } })
+ *
+ * Or pass null to omit the package entirely and build fully local:
+ *   admin: { components: { graphics: { Logo: './src/components/MyLogo#MyLogo' } } }
  */
-export function getAdminComponents() {
+export function getAdminComponents(overrides: AdminComponents = {}) {
   return {
-    beforeNavLinks: ['@loom/payload-admin#AdminNavPanel'],
+    beforeNavLinks: overrides.beforeNavLinks ?? ['@loom/payload-admin#AdminNavPanel'],
     views: {
       dashboard: {
-        Component: '@loom/payload-admin#AdminDashboardView',
+        Component: overrides.views?.dashboard?.Component ?? '@loom/payload-admin#AdminDashboardView',
       },
     },
     graphics: {
-      Icon: '@loom/payload-admin#ProjectsIcon',
-      Logo: '@loom/payload-admin#AdminLogo',
+      Icon: overrides.graphics?.Icon ?? '@loom/payload-admin#ProjectsIcon',
+      Logo: overrides.graphics?.Logo ?? '@loom/payload-admin#AdminLogo',
     },
   }
 }
