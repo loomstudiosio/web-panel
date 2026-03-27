@@ -22,7 +22,7 @@ type AdminComponentOverrides = {
  * Pass overrides to replace individual components:
  *   getAdminComponents({ logo: './src/components/MyLogo#MyLogo' })
  */
-export function getAdminComponents(overrides: AdminComponentOverrides = {}): Config['admin']['components'] {
+export function getAdminComponents(overrides: AdminComponentOverrides = {}): NonNullable<Config['admin']>['components'] {
   return {
     // Custom navigation panel before the built-in nav links
     beforeNavLinks: overrides.beforeNavLinks ?? ['@loom/payload-admin#AdminNavPanel'],
