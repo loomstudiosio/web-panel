@@ -3,6 +3,7 @@
 // e.g. '@loom/payload-admin#AdminNavPanel'
 export { AdminNavPanel } from './AdminNavPanel'
 export { AdminDashboardView } from './AdminDashboardView'
+export { DashboardContent } from './DashboardContent'
 export { AdminLogo } from './AdminLogo'
 export { ProjectsIcon } from './ProjectsIcon'
 export { AdminLayout } from './AdminLayout'
