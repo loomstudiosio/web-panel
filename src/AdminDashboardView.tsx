@@ -85,10 +85,10 @@ function DashboardContent({
         <div className="space-y-6">
           <div className="relative overflow-hidden rounded-2xl border border-[color-mix(in_srgb,var(--admin-brand-1)_24%,var(--theme-elevation-200))] bg-[radial-gradient(circle_at_100%_0,color-mix(in_srgb,var(--admin-brand-2)_28%,transparent),transparent_48%),radial-gradient(circle_at_0%_100%,color-mix(in_srgb,var(--admin-brand-1)_20%,transparent),transparent_45%),var(--admin-surface-1)] px-6 py-5">
             <p className="m-0 text-[0.72rem] uppercase tracking-[0.11em] text-[var(--theme-elevation-700)]">
-              Welcome to
+              ✨ Welcome to
             </p>
             <h1 className="m-0 mt-0.5 text-[clamp(1.4rem,1.8vw+0.9rem,2rem)] leading-[1.1]">
-              Control Room
+              🎛️ Control Room
             </h1>
             <p className="m-0 mt-2 max-w-[70ch] text-[var(--theme-elevation-700)]">
               Publish project updates, manage media assets, and keep your portfolio content synchronized.
@@ -98,7 +98,7 @@ function DashboardContent({
           {/* Stats */}
           <div className="grid grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-3.5">
             <article className="rounded-[14px] border border-[var(--theme-elevation-200)] bg-[var(--admin-surface-2)] p-4">
-              <p className="m-0 text-[0.82rem] text-[var(--theme-elevation-700)]">Total Projects</p>
+              <p className="m-0 text-[0.82rem] text-[var(--theme-elevation-700)]">🎨 Total Projects</p>
               <p className="m-0 mt-0.5 text-[clamp(1.45rem,2vw+0.85rem,2.2rem)] font-bold leading-[1.1]">
                 {projectsTotal}
               </p>
@@ -111,7 +111,7 @@ function DashboardContent({
             </article>
 
             <article className="rounded-[14px] border border-[var(--theme-elevation-200)] bg-[var(--admin-surface-2)] p-4">
-              <p className="m-0 text-[0.82rem] text-[var(--theme-elevation-700)]">Media Assets</p>
+              <p className="m-0 text-[0.82rem] text-[var(--theme-elevation-700)]">📷 Media Assets</p>
               <p className="m-0 mt-0.5 text-[clamp(1.45rem,2vw+0.85rem,2.2rem)] font-bold leading-[1.1]">
                 {mediaTotal}
               </p>
@@ -130,7 +130,7 @@ function DashboardContent({
             aria-label="Recent projects"
           >
             <div className="flex items-center justify-between gap-3 mb-4">
-              <h2 className="m-0 text-base font-semibold">Recently Updated</h2>
+              <h2 className="m-0 text-base font-semibold">📝 Recently Updated</h2>
               <Link
                 className="text-[var(--admin-brand-1)] font-semibold no-underline"
                 href="/admin/collections/projects"
