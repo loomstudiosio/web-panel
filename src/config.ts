@@ -15,7 +15,6 @@ type AdminComponents = {
  */
 export function getAdminComponents(overrides: AdminComponents = {}) {
   return {
-    beforeNavLinks: overrides.beforeNavLinks ?? ['@loom/payload-admin#AdminLayout'],
     views: {
       dashboard: {
         Component: overrides.views?.dashboard?.Component ?? '@loom/payload-admin#AdminDashboardView',
