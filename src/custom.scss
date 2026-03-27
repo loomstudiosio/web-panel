@@ -10,6 +10,17 @@
   --admin-surface-2: color-mix(in srgb, var(--theme-elevation-50) 70%, #ffffff);
 }
 
+/* Hide Payload's default navigation since we're using custom AdminLayout */
+.app-gutter__nav {
+  display: none !important;
+}
+
+/* Adjust main container to not reserve space for hidden nav */
+.app-gutter {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
 .collections__label {
   padding-top: 2rem;
 }
