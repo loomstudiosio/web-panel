@@ -10,15 +10,40 @@
   --admin-surface-2: color-mix(in srgb, var(--theme-elevation-50) 70%, #ffffff);
 }
 
-/* Hide Payload's default navigation since we're using custom AdminLayout */
+/* Hide Payload's default navigation structure - use !important to override specificity */
 .app-gutter__nav {
+  display: none !important;
+  width: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Hide nav header area if it exists */
+[class*="app-gutter__header"],
+.admin-nav,
+.admin__sidebar {
   display: none !important;
 }
 
-/* Adjust main container to not reserve space for hidden nav */
+/* Adjust main container to take full width without nav */
 .app-gutter {
   margin-left: 0 !important;
   padding-left: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+}
+
+/* Ensure AdminLayout takes full available space */
+.admin-layout-container,
+[class*="AdminLayout"] {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Admin layout and sidebar styling */
+.layout,
+.admin {
+  display: block !important;
 }
 
 .collections__label {
