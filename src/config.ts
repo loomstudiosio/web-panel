@@ -27,3 +27,26 @@ export function getAdminComponents(overrides: AdminComponents = {}) {
     },
   }
 }
+
+/**
+ * Returns admin.components config using the new custom AdminLayout.
+ * AdminLayout provides emoji-based navigation sidebar with full layout wrapping.
+ * 
+ * Usage in payload.config.ts:
+ *   const { getAdminComponentsWithLayout } = await import('@loom/payload-admin/config')
+ *   admin: { components: getAdminComponentsWithLayout() }
+ */
+export function getAdminComponentsWithLayout(overrides: AdminComponents = {}) {
+  return {
+    beforeNavLinks: overrides.beforeNavLinks ?? ['@loom/payload-admin#AdminLayout'],
+    views: {
+      dashboard: {
+        Component: overrides.views?.dashboard?.Component ?? '@loom/payload-admin#AdminDashboardView',
+      },
+    },
+    graphics: {
+      Icon: overrides.graphics?.Icon ?? '@loom/payload-admin#ProjectsIcon',
+      Logo: overrides.graphics?.Logo ?? '@loom/payload-admin#AdminLogo',
+    },
+  }
+}
