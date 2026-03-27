@@ -21,9 +21,11 @@ export function AdminLayout({ children, breadcrumb = [], currentSection = 'dashb
   }
 
   return (
-    <div className="flex h-screen bg-[var(--theme-bg)]">
-      {/* Sidebar */}
-      <AdminSidebar currentSection={currentSection} />
+    <div className="flex flex-col min-h-full w-full bg-[var(--theme-bg)]">
+      {/* Sidebar + Content Wrapper */}
+      <div className="flex flex-1 overflow-hidden">
+        {/* Sidebar */}
+        <AdminSidebar currentSection={currentSection} />
 
       {/* Main Content */}
       <div className="flex-1 flex flex-col overflow-hidden">
