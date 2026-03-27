@@ -1,4 +1,4 @@
-import type { AdminConfig } from 'payload'
+import type { Config } from 'payload'
 
 type AdminComponentOverrides = {
   beforeNavLinks?: string[]
@@ -22,7 +22,7 @@ type AdminComponentOverrides = {
  * Pass overrides to replace individual components:
  *   getAdminComponents({ logo: './src/components/MyLogo#MyLogo' })
  */
-export function getAdminComponents(overrides: AdminComponentOverrides = {}): AdminConfig['components'] {
+export function getAdminComponents(overrides: AdminComponentOverrides = {}): Config['admin']['components'] {
   return {
     // Custom navigation panel before the built-in nav links
     beforeNavLinks: overrides.beforeNavLinks ?? ['@loom/payload-admin#AdminNavPanel'],
